@@ -33,6 +33,7 @@ ul{
     color:hsl(183, 100%, 15%);
 }
 .button:focus{
-    background-color: hsl(185, 41%, 84%); 
+    background-color: hsl(185, 41%, 84%) ; 
     color:hsl(183, 100%, 15%);
+    cursor: pointer;
 }

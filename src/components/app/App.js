@@ -20,8 +20,8 @@ function App() {
   const [customField, setCustomField] = useState(undefined)
 
   const onCustomField = data => setCustomField(data.customButton);
-  const onBlurBill = data => setBill(data.bill);
-  const onBlurPeople = data => setNumber(data.people);
+  const onChangeBill = data => setBill(data.bill);
+  const onChangePeople = data => setNumber(data.people);
   const onButtonClicked = data => setSelectedButton(data);
 
   const tipAmountResult = ((Number(bill) *  (customField  === undefined ? (Number(selectedButton) / 100) :  (Number(customField) / 100))
@@ -39,7 +39,7 @@ function App() {
   }, [tipAmount]);
 
   function resetButtonClicked() {
-    setBill("");
+    setBill("")
     setNumber("");
     setSelectedButton(undefined);
   }
@@ -47,11 +47,11 @@ function App() {
   return (
     <div className={styles.mainDiv}>
       <Calculator>
-        <Bill onBlurBill={onBlurBill} />
+        <Bill onChangeBill={onChangeBill} bill={bill}/>
         <TipButtons onButtonClicked={onButtonClicked}>
           <CustomButton onCustomField={onCustomField} />
         </TipButtons>
-        <NumberOfPeople onBlurPeople={onBlurPeople} />
+        <NumberOfPeople onChangePeople={onChangePeople} numberOfPeople={numberOfPeople}/>
       </Calculator>
 
       <Result>

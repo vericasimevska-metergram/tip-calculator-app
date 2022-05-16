@@ -7,7 +7,7 @@ export function TipButtons({onButtonClicked, children}) {
             <ul>
                 {tipButtons.map((tipButton) =>
                     <li>
-                        <button
+                        <button type="submit"
                             className={styles.button}
                             onClick={() => onButtonClicked(tipButton)}>{tipButton}%</button>
                     </li>
